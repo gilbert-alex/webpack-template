@@ -1,3 +1,6 @@
+// unused but kept as legacy config file as there are still
+// compatibility issues with the .mjs config files
+
 {
     "env": {
       "browser": true,

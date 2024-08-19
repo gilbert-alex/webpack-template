@@ -10,15 +10,15 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Default Title from Config',
+            filename: 'index.html',
             template: './src/template.html',
         }),
         new ESLintPlugin({
-            extensions: ['js', 'jsx', 'mjs'],
-
-            // .mjs (and ESLint v^9) config filetype seems to be incompatible with webpack
-            // reverting to .json legacy config file and explicitly calling here
-            overrideConfigFile: path.resolve(__dirname, './.eslintrc.json'),
-            // overrideConfigFile: path.resolve(__dirname, './eslint.config.mjs'),
+            extensions: ['js', 'jsx'],
+            configType: 'flat',
+            // config files specified here for visibility but not required
+            // overrideConfigFile: path.resolve(__dirname, './.eslintrc.json'),
+            overrideConfigFile: path.resolve(__dirname, './eslint.config.mjs'),
         }),
     ],
     module: {
