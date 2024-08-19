@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const json5 = require('json5');
 
 module.exports = {
@@ -8,8 +9,16 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-        title: 'Default Title from Config',
-        template: './src/template.html',
+            title: 'Default Title from Config',
+            template: './src/template.html',
+        }),
+        new ESLintPlugin({
+            extensions: ['js', 'jsx', 'mjs'],
+
+            // .mjs (and ESLint v^9) config filetype seems to be incompatible with webpack
+            // reverting to .json legacy config file and explicitly calling here
+            overrideConfigFile: path.resolve(__dirname, './.eslintrc.json'),
+            // overrideConfigFile: path.resolve(__dirname, './eslint.config.mjs'),
         }),
     ],
     module: {

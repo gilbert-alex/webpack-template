@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint 'src/**/*.{js,jsx}'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --config webpack.dev.js",
     "dev": "webpack serve --open --config webpack.dev.js",
@@ -14,9 +15,14 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
     "css-loader": "^7.1.2",
     "csv-loader": "^3.0.5",
+    "eslint": "^9.9.0",
+    "eslint-webpack-plugin": "^4.2.0",
+    "esm": "^3.2.25",
     "file-loader": "^6.2.0",
+    "globals": "^15.9.0",
     "html-webpack-plugin": "^5.6.0",
     "json5": "^2.2.3",
     "style-loader": "^4.0.0",
