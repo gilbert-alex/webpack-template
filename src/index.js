@@ -5,4 +5,4 @@ const hello = document.createElement('p');
 hello.textContent = 'hello world';
 body.appendChild(hello);
 
-// let goinNowhere = 'dumb'
+let goinNowhere = 'dumb';
